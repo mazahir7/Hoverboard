@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@400;500;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	/* changes the 1REM from 16px to 10px */
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	background-color: #111;
+}
+
+.edit {
+	cursor: pointer;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	background-color: #fff;
+	font-size: 2rem;
+	padding: 0.5rem;
+	border-radius: 11px;
+	transform: scale(1);
+	animation: popping 1s infinite alternate;
+}
+
+@keyframes popping {
+	to {
+		transform: scale(1.3);
+	}
+}
+
+.options {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	background-color: seashell;
+	width: 60rem;
+	height: 40rem;
+	border-radius: 6px;
+	transition: all 0.4s ease;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+}
+
+input {
+	padding: 4px;
+	width: 12rem;
+	height: 4rem;
+}
+
+input:focus,
+input:focus-visible {
+	outline: none;
+}
+
+button {
+	border: none;
+	padding: 1rem 4rem;
+	background-color: red;
+	color: #fff;
+	font-size: 1.8rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#num-square {
+	width: 15rem;
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 1.6rem;
+}
+
+#color {
+	padding: 0;
+}
+
+.options.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 96%;
+}
+
+.square {
+	width: 1.6rem;
+	height: 1.6rem;
+	box-shadow: 0 0 2px #1d1d1d;
+	background-color: #1d1d1d;
+	margin: 2px;
+	transition: all 2s ease;
+}
+
+.square:hover {
+	transition-duration: 0s;
+}
